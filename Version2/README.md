@@ -127,11 +127,26 @@ Update these constants in main.py:
 
 ### Common Issues
 
-**UWB not connecting:**
+## UWB Not Connecting
 
 - Check physical connections
-- Verify correct port in uwb_reader.py
+- Verify the correct port is set in `uwb_reader.py`
 - Try resetting the UWB module
+- If you're on a fresh boot, run the following in your terminal to get consistent readings from the UWB:
+
+  screen /dev/ttyACM1 115200
+  Press Enter twice quickly (or until you see dwm> on the terminal)
+
+Then run:
+lep
+If successful, you will see position readings in this format:
+
+POS,x_cord,y_cord,z_cord
+
+To exit the screen session:
+Press Ctrl + A, then K (you may need to repeat this constantly)
+
+When prompted with "Kill this window", press Y to confirm
 
 **MQTT connection issues:**
 
