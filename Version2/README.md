@@ -154,7 +154,7 @@ Press:
 
 When prompted with "Kill this window":
 
-    press Y to confirm
+    press Y to confir
 
 **MQTT connection issues:**
 
