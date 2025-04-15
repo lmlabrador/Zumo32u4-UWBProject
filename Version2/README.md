@@ -138,15 +138,23 @@ Update these constants in main.py:
   Press Enter twice quickly (or until you see dwm> on the terminal)
 
 Then run:
-lep
+
+    lep
+
 If successful, you will see position readings in this format:
 
-POS,x_cord,y_cord,z_cord
+    POS,x_cord,y_cord,z_cord
 
 To exit the screen session:
-Press Ctrl + A, then K (you may need to repeat this constantly)
+Press:
 
-When prompted with "Kill this window", press Y to confirm
+    Ctrl + A, then K
+
+(you may need to repeat this constantly)
+
+When prompted with "Kill this window":
+
+    press Y to confirm
 
 **MQTT connection issues:**
 
