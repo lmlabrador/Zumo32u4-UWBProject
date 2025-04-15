@@ -146,7 +146,7 @@ POS,x_cord,y_cord,z_cord
 To exit the screen session:
 Press Ctrl + A, then K (you may need to repeat this constantly)
 
-When prompted with "Kill this window", press Y to confirm
+When prompted with "Kill this window", press "Y" to confirm
 
 **MQTT connection issues:**
 
