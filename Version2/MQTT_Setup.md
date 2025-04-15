@@ -1,5 +1,4 @@
-
-# MQTT Server Setup with Mosquitto 
+# MQTT Server Setup with Mosquitto
 
 This guide walks through installing Mosquitto, configuring it as an MQTT broker, and testing communication between a Windows PC and a Raspberry Pi 4. It also includes firewall tips for both systems.
 
@@ -16,6 +15,7 @@ This guide walks through installing Mosquitto, configuring it as an MQTT broker,
    - Download the latest `mosquitto-x.x.x-install-windows-x64.exe` file.
 
 2. Run the installer and ensure these options are checked:
+
    - **Mosquitto Broker**
    - **Service Install**
    - **MQTT Client Utilities**
@@ -30,11 +30,13 @@ This guide walks through installing Mosquitto, configuring it as an MQTT broker,
 ### On Raspberry Pi (Raspbian/Debian-based)
 
 1. Update your system:
+
    ```bash
    sudo apt update && sudo apt upgrade -y
    ```
 
 2. Install Mosquitto and client tools:
+
    ```bash
    sudo apt install mosquitto mosquitto-clients -y
    ```
@@ -54,6 +56,7 @@ We’ll test by publishing a message from one device and subscribing on the othe
 ### From Windows → Raspberry Pi (as broker)
 
 1. On **RPI4**, start a subscriber:
+
    ```bash
    mosquitto_sub -h localhost -t test/topic
    ```
@@ -68,6 +71,7 @@ You should see the message appear on the Raspberry Pi terminal.
 ### From Raspberry Pi → Windows (as broker)
 
 1. On **Windows**, open a `Command Prompt` and subscribe:
+
    ```bash
    mosquitto_sub -h localhost -t test/topic
    ```
@@ -87,6 +91,7 @@ You should see the message on the Windows terminal.
 
 1. Open **Windows Defender Firewall with Advanced Security**
 2. Create an **Inbound Rule**:
+
    - **Port:** 1883 (TCP)
    - **Allow the connection**
    - Apply to **Private** and **Public** networks
@@ -94,18 +99,20 @@ You should see the message on the Windows terminal.
 
 3. (Optional) Do the same for **Outbound Rule** if communication issues arise.
 
-### Raspberry Pi (UFW)
+### Raspberry Pi
 
 I had firewall issues with setting it up on Rpi4B
 
 Here is what I did to fix it:
 
 1. Install ufw:
+
    ```bash
    sudo apt install ufw
    ```
 
 2. Allow MQTT port and SSH:
+
    ```bash
    sudo ufw allow 1883
    sudo ufw allow 22
